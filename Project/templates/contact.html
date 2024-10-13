@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5" style="background-color:azure">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header" style="background-color:#8A2BE2">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('contact') }}" method="POST">
+                    <div class="form-group">
+                        <label for="message">Your Message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Type your message here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock %}

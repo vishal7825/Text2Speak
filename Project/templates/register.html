@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-header" style="background-color:#8A2BE2">
+                    <h2>Registration</h2>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('register') }}" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" name='name' placeholder="Choose a username">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name='email' placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name='password' placeholder="Choose a password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirm_password" name='confirm_password' placeholder="Confirm your password">
+                        </div>
+                        <center>    
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="reset" class="btn btn-primary" >Reset</button>
+                    </form>
+                </div>
+                <center>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            </div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="card-body">
+        <center>
+      <h3>Already have an account??</h3>
+      <h3><button type="submit" class="btn btn-success" ><a class="nav-link" href="{{ url_for('login') }}" style="color:white">Log in</a></h3></button>
+        
+      </div>
+   
+</body>
+</html>
+{% include 'footer.html' %}
+{% endblock %}

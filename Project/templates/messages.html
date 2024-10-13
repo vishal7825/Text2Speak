@@ -1,0 +1,36 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+    <h1>Welcome to the Messages Page</h1>
+    <p>This is the content of the message page.</p>
+    <center>
+   <table>
+    <tr>
+        <th>
+            Message:
+        </th>
+        <th>
+            Username:
+        </th>
+    </tr>
+    
+    {%for user in user_data:%}
+    <tr>
+    <td>    
+        {%print(user[2])%}
+    </td>
+    <td>    
+        {%print(user[1])%}
+    </td>
+        
+</tr>
+
+    {%endfor%}
+</table>
+       
+{% endblock %}
+
+   

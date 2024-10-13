@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexfooter.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{% block title %}Text2Speak{% endblock %}</title>
+</head>
+<body style="background-color:azure">
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Wildbeast - Projeto CSS Grid Layout - Guia Completo - display: grid;</title>
+</head>
+<body>
+    <header>
+        <h2>Text2Speak</h2>
+        <nav>
+            <ul>
+                <li class="nav-item {% if page == 'text_to_speech' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('text_to_speech') }}">Home</a>
+                </li>
+                
+                <li class="nav-item {% if page == 'contact' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                </li>
+               
+                <li class="nav-item {% if page == 'about_us' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+                </li>
+               
+                <li class="nav-item {% if page == 'login' %}active{% endif %}">
+                   {% if 'user_id' in session :%}
+                   <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                   {%endif%}
+                   {% if 'user_id' not in session :%}
+                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    {%endif%}
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+   
+</body>
+</html>
+   
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="js/one.js" ></script>
+    <script src="js/two.js" ></script>
+    <script src="js/three.js" >
+
+    </script>
+</body>
+</html>
+<style>
+    /* font-family: 'Vollkorn', serif; */
+    @import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400&display=swap');
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+   
+    
+    header{
+        font-size: 1.6em;
+        font-family: 'Vollkorn', serif;
+    }
+    
+    /* linear-gradient(135deg, #8844ee, #b07dfb);
+    #b07dfb; */
+    
+    header{
+        display: flex;
+        background-image: linear-gradient(135deg, #8844ee, #b07dfb);
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    
+    header img{
+        max-width: 200px;
+    }
+    
+    nav ul{
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+    
+    nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.11);
+        border-radius: 4px;
+        padding: 1.2rem 1.8rem;
+        font-size: 1.8rem;
+        font-size: 62.5%;
+        display: inline-block;
+    }
+    
+    nav ul li a:hover{
+        background-color: rgba(0, 0, 0, 0.301);
+    }
+    
+    
+    
+   
+    
+    
+   
+</style>
